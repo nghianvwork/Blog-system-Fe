@@ -62,12 +62,12 @@ export default function Header() {
             margin: 0,
             padding: 0,
           }}>
-            <li><Link href="/" style={{ color: "#222", fontWeight: 500, textDecoration: "none" }}>Home</Link></li>
+            <li><Link href="/home" style={{ color: "#222", fontWeight: 500, textDecoration: "none" }}>Home</Link></li>
             <li  style={{ position: "relative" }}>
               <Link  href="/users/profile" style={{ color: "#222", fontWeight: 500, cursor: "pointer",textDecoration: "none" }} >Hồ sơ cá nhân <span style={{ fontSize: 14 }}>▼</span></Link>
             </li>
             <li style={{ position: "relative" }}>
-              <span style={{ color: "#222", fontWeight: 500, cursor: "pointer" }}>Post <span style={{ fontSize: 14 }}>▼</span></span>
+              <Link href={"/users/posts"}  style={{ color: "#222", fontWeight: 500, cursor: "pointer" }}>Post của tôi <span style={{ fontSize: 14 }}>▼</span></Link>
             </li>
           </ul>
         )}
@@ -94,6 +94,7 @@ export default function Header() {
             </span>
           </div>
           
+          
          
           {user ? (
             <div style={{ position: "relative" }}>
@@ -103,7 +104,7 @@ export default function Header() {
                 style={{ width: 38, height: 38, objectFit: "cover", borderRadius: "50%", border: "2px solid #eee", cursor: "pointer" }}
                 title={user.name}
               />
-            
+             <a onClick={() => handleLogout()} style={{ color: "#222", fontWeight: 500, textDecoration: "none" }}>Đăng xuất</a>
             </div>
           ) : (
             <div style={{ display: "flex", gap: 10 }}>

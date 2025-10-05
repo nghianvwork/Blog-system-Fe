@@ -19,7 +19,7 @@ export default function LoginPage() {
       try {
         const u = JSON.parse(data as string);
         if (u && (u.id || u.email || u.name)) {
-          router.replace("/"); 
+          router.replace("/home"); 
         }
       } catch {}
     }
@@ -79,10 +79,10 @@ const handleSubmit = async (e: React.FormEvent) => {
           break;
         
         default:
-          router.replace("/");
+          router.replace("/home");
       }
     } else {
-      router.replace("/");
+      router.replace("/home");
     }
   } catch (err) {
     console.error(err);
@@ -114,7 +114,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           overflow: "hidden",
         }}
       >
-        {/* Left: Login form */}
+       
         <div
           style={{
             flex: 1,
@@ -230,7 +230,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             Already have an account? <a href="/register" style={{ color: "#111", fontWeight: 600 }}>Log In</a>
           </div>
         </div>
-        {/* Right: Astronaut image */}
+     
         <div
           style={{
             flex: 1.1,
