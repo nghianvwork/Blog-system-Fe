@@ -29,7 +29,7 @@ export default function ProfilePage() {
     const fetchProfile = async () => {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:4000/api/v1/users/profile", {
+        const res = await fetch("http://localhost:3000/api/v1/users/profile", {
           method: "GET",
           credentials: "include",
           headers: { Accept: "application/json" },
@@ -86,7 +86,7 @@ export default function ProfilePage() {
         payload.newPassword = newPassword;
       }
 
-      const res = await fetch("http://localhost:4000/api/v1/users/profile", {
+      const res = await fetch("http://localhost:3000/api/v1/users/profile", {
         method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json", Accept: "application/json" },

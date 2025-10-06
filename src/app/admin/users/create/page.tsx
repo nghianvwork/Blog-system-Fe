@@ -14,7 +14,7 @@ function CreateUserPage() {
     setLoading(true);
     const createUser = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/v1/admin/users", {
+        const res = await fetch("http://localhost:3000/api/v1/admin/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

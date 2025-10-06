@@ -24,7 +24,7 @@ export default function LoginPage() {
       } catch {}
     }
   }, [router]);
-  const API_URL = "http://localhost:4000/api/v1/auth/login"; 
+  const API_URL = "http://localhost:3000/api/v1/auth/login"; 
 
 
 const handleSubmit = async (e: React.FormEvent) => {
@@ -220,7 +220,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                 gap: 8,
                 boxShadow: "0 1px 4px #0001"
               }}
-              onClick={() => alert("Google login chưa hỗ trợ!")}
+              onClick={() => {
+                window.location.href = "http://localhost:4000/api/v1/auth/google";
+              }}
             >
               <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" style={{ width: 22, marginRight: 6 }} />
               Continue with Google

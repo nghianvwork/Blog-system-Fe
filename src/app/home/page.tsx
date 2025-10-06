@@ -14,7 +14,7 @@ export default function Home() {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:4000/api/v1/posts", { credentials: "include" });
+        const res = await fetch("http://localhost:3000/api/v1/posts", { credentials: "include" });
         const data = await res.json();
         setPosts(Array.isArray(data) ? data : data.posts || []);
       } catch {

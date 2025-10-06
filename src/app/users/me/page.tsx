@@ -36,7 +36,7 @@ export default function MePage() {
     const fetchProfile = async () => {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:4000/api/v1/users/profile", {
+        const res = await fetch("http://localhost:3000/api/v1/users/profile", {
           method: "GET",
           credentials: "include",
           headers: { Accept: "application/json" },
@@ -63,7 +63,7 @@ export default function MePage() {
     if (!user?.id) return;
     const fetchPosts = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/api/v1/posts?userId=${user.id}`, { credentials: "include" });
+        const res = await fetch(`http://localhost:3000/api/v1/posts?userId=${user.id}`, { credentials: "include" });
         const data = await res.json();
         setPosts(Array.isArray(data) ? data : data.posts || []);
       } catch {

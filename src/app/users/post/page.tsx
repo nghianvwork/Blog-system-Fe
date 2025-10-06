@@ -17,8 +17,8 @@ export default function UserPostsPage() {
 			setLoading(true);
 			try {
 				const [userRes, postsRes] = await Promise.all([
-					fetch(`http://localhost:4000/api/v1/users/${userId}`, { credentials: "include" }),
-					fetch(`http://localhost:4000/api/v1/posts?userId=${userId}`, { credentials: "include" })
+					fetch(`http://localhost:3000/api/v1/users/${userId}`, { credentials: "include" }),
+					fetch(`http://localhost:3000/api/v1/posts?userId=${userId}`, { credentials: "include" })
 				]);
 				const userData = await userRes.json();
 				const postsData = await postsRes.json();

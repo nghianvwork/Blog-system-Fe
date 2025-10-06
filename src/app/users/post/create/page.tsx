@@ -16,7 +16,7 @@ export default function CreatePostPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:4000/api/v1/posts", {
+      const res = await fetch("http://localhost:3000/api/v1/posts", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

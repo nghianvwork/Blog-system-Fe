@@ -22,7 +22,7 @@ function AdminUsersPage() {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:4000/api/v1/admin/users", {
+      const res = await fetch("http://localhost:3000/api/v1/admin/users", {
         method: "GET",
         credentials: "include",
         headers: { Accept: "application/json" },
@@ -46,7 +46,7 @@ function AdminUsersPage() {
     if (!userId) return;
     if (!window.confirm("Bạn có chắc chắn muốn xóa người dùng này?")) return;
     try {
-      const res = await fetch(`http://localhost:4000/api/v1/admin/users/${userId}`, {
+      const res = await fetch(`http://localhost:3000/api/v1/admin/users/${userId}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -62,7 +62,7 @@ function AdminUsersPage() {
     if (!userId) return;
     if (!window.confirm("Ban người dùng này?")) return;
     try {
-      const res = await fetch(`http://localhost:4000/api/v1/admin/users/${userId}/ban`, {
+      const res = await fetch(`http://localhost:3000/api/v1/admin/users/${userId}/ban`, {
         method: "POST",
         credentials: "include",
       });
@@ -78,7 +78,7 @@ function AdminUsersPage() {
     if (!userId) return;
     if (!window.confirm("Unban người dùng này?")) return;
     try {
-      const res = await fetch(`http://localhost:4000/api/v1/admin/users/${userId}/unban`, {
+      const res = await fetch(`http://localhost:3000/api/v1/admin/users/${userId}/unban`, {
         method: "POST",
         credentials: "include",
       });
