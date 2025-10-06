@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-
+import Image from "next/image";
 export default function UserPostsPage() {
 		const searchParams = useSearchParams();
 		const userId = searchParams ? searchParams.get("id") : null;
@@ -41,7 +41,7 @@ export default function UserPostsPage() {
 				<div className="container" style={{ maxWidth: 700, margin: "0 auto", padding: "32px 0" }}>
 					{user && (
 						<div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 32 }}>
-							<img src={user.avatarUrl || "/default-avatar.png"} alt={user.name} style={{ width: 80, height: 80, borderRadius: "50%", objectFit: "cover", border: "2px solid #eee" }} />
+							<Image src={user.avatarUrl || "/default-avatar.png"} alt={user.name} width={80} height={80} style={{ borderRadius: "50%", objectFit: "cover", border: "2px solid #eee" }} />
 							<div>
 								<div style={{ fontWeight: 700, fontSize: 26 }}>{user.name}</div>
 								<div style={{ color: "#888", fontSize: 16 }}>{user.email}</div>
@@ -65,7 +65,7 @@ export default function UserPostsPage() {
 															return (
 																<div key={post.id} style={{ background: "#fff", borderRadius: 14, boxShadow: "0 2px 12px #0001", padding: 20 }}>
 																	<div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 8 }}>
-																		<img src={user?.avatarUrl || "/default-avatar.png"} alt={user?.name} style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid #f3f3f3" }} />
+																		<Image src={user?.avatarUrl || "/default-avatar.png"} alt={user?.name} style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid #f3f3f3" }} />
 																		<div>
 																			<div style={{ fontWeight: 600, fontSize: 17 }}>{user?.name || user?.email || "Người dùng"}</div>
 																			<div style={{ color: "#888", fontSize: 14 }}>{new Date(post.created_at || post.createdAt).toLocaleString()}</div>
@@ -75,7 +75,7 @@ export default function UserPostsPage() {
 																	{post.excerpt && <div style={{ color: "#666", fontSize: 15, marginBottom: 6 }}>{post.excerpt}</div>}
 																	{post.imageUrl && (
 																		<div style={{ margin: "12px 0" }}>
-																			<img src={post.imageUrl} alt="post-img" style={{ width: "100%", borderRadius: 10, maxHeight: 400, objectFit: "cover" }} />
+																			<Image src={post.imageUrl} alt="post-img" style={{ width: "100%", borderRadius: 10, maxHeight: 400, objectFit: "cover" }} />
 																		</div>
 																	)}
 																	<div style={{ fontSize: 17, marginBottom: 8, whiteSpace: "pre-line" }}>{post.content}</div>

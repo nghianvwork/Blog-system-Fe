@@ -19,7 +19,7 @@ export default function UserCardsDemoPage() {
     fetch("http://localhost:3000/api/v1/users")
       .then((res) => res.json())
       .then((data) => {
-        setUsers(data.users || []);
+        setUsers(data.users || []) ;
         setLoading(false);
       })
       .catch(() => setLoading(false));

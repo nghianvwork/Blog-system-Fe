@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-
+import Image from "next/image";
 type User = {
   id?: number;
   email?: string;
@@ -106,7 +106,7 @@ export default function MePage() {
               posts.map(post => (
                 <div key={post.id} style={{ background: "#fff", borderRadius: 14, boxShadow: "0 2px 12px #0001", padding: 20 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 8 }}>
-                    <img src={user?.avatarUrl || "/default-avatar.png"} alt={user?.name} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover", border: "2px solid #f3f3f3" }} />
+                    <img src={user?.avatarUrl || "/default-avatar.png"} alt={user?.name} width={48} height={48} style={{ borderRadius: "50%", objectFit: "cover", border: "2px solid #f3f3f3" }} />
                     <div>
                       <div style={{ fontWeight: 600, fontSize: 17 }}>{user?.name || user?.email || "Người dùng"}</div>
                       <div style={{ color: "#888", fontSize: 14 }}>{post.created_at ? new Date(post.created_at).toLocaleString() : ""}</div>

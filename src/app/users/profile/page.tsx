@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 type User = {
   id?: number;
   email?: string;
@@ -134,10 +134,12 @@ export default function ProfilePage() {
 
       <div className="card mb-4">
         <div className="card-body d-flex gap-4">
-          <img
+          <Image
             src={avatarUrl}
             alt="avatar"
-            style={{ width: 96, height: 96, objectFit: "cover", borderRadius: "8px" }}
+            width={96}
+            height={96}
+            style={{ objectFit: "cover", borderRadius: "8px" }}
           />
           <div>
             <h5 className="mb-1">{user?.name || user?.email}</h5>
