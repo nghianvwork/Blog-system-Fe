@@ -97,14 +97,15 @@ export default function Header() {
           
          
           {user ? (
-            <div style={{ position: "relative" }}>
+            <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 10 }}>
               <img
                 src={user?.avatarUrl || "/default-avatar.png"}
                 alt="avatar"
                 style={{ width: 38, height: 38, objectFit: "cover", borderRadius: "50%", border: "2px solid #eee", cursor: "pointer" }}
                 title={user.name}
+                onClick={() => window.location.href = "/users/me"}
               />
-             <a onClick={() => handleLogout()} style={{ color: "#222", fontWeight: 500, textDecoration: "none" }}>Đăng xuất</a>
+              <a onClick={() => handleLogout()} style={{ color: "#222", fontWeight: 500, textDecoration: "none", cursor: "pointer" }}>Đăng xuất</a>
             </div>
           ) : (
             <div style={{ display: "flex", gap: 10 }}>

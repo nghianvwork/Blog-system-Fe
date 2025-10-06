@@ -36,20 +36,25 @@ export default function UserPostsPage() {
 
 	if (!userId) return <div className="container py-5">Không tìm thấy user.</div>;
 
-	return (
-		<div style={{ background: "#f6f7fb", minHeight: "100vh", padding: 0 }}>
-			<div className="container" style={{ maxWidth: 700, margin: "0 auto", padding: "32px 0" }}>
-				{user && (
-					<div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 32 }}>
-						<img src={user.avatarUrl || "/default-avatar.png"} alt={user.name} style={{ width: 80, height: 80, borderRadius: "50%", objectFit: "cover", border: "2px solid #eee" }} />
-						<div>
-							<div style={{ fontWeight: 700, fontSize: 26 }}>{user.name}</div>
-							<div style={{ color: "#888", fontSize: 16 }}>{user.email}</div>
-							<div style={{ color: "#666", fontSize: 15 }}>{user.bio}</div>
+		return (
+			<div style={{ background: "#f6f7fb", minHeight: "100vh", padding: 0 }}>
+				<div className="container" style={{ maxWidth: 700, margin: "0 auto", padding: "32px 0" }}>
+					{user && (
+						<div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 32 }}>
+							<img src={user.avatarUrl || "/default-avatar.png"} alt={user.name} style={{ width: 80, height: 80, borderRadius: "50%", objectFit: "cover", border: "2px solid #eee" }} />
+							<div>
+								<div style={{ fontWeight: 700, fontSize: 26 }}>{user.name}</div>
+								<div style={{ color: "#888", fontSize: 16 }}>{user.email}</div>
+								<div style={{ color: "#666", fontSize: 15 }}>{user.bio}</div>
+							</div>
 						</div>
+					)}
+					<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18 }}>
+						<h3 style={{ fontWeight: 700, fontSize: 22, margin: 0 }}>Bài viết</h3>
+						<a href="/posts/create" className="btn btn-primary" style={{ fontWeight: 600, borderRadius: 8, padding: "8px 20px" }}>
+							<i className="bi bi-plus-lg"></i> Tạo bài viết
+						</a>
 					</div>
-				)}
-				<h3 style={{ fontWeight: 700, fontSize: 22, marginBottom: 18 }}>Bài viết</h3>
 				{loading ? (
 					<div className="text-center py-5">Đang tải bài viết...</div>
 				) : posts.length === 0 ? (
